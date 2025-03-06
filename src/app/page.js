@@ -103,6 +103,7 @@ export default function Home() {
 
 "use client";
 import { useState } from "react";
+import { Analytics } from "@vercel/analytics/react"
 
 function Square({ value, onClick}) {
     return <button className="square" onClick={onClick}>
@@ -208,7 +209,9 @@ const moves = history.map((squares, move) => {
         </div>
         <div className="game-info">
           <ol>{moves}</ol>
+          <Analytics />
         </div>
+
     </div>
     );
 }
